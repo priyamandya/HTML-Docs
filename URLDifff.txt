@@ -1,0 +1,37 @@
+Absolute url:
+---------------
+
+  protocol://domain/path
+
+
+An absolute URL contains more information than a relative URL does. Relative URLs are moreconvenient because they are shorter and often more portable. 
+However, you can use them only to reference links on the same
+ server as the page that contains them.
+
+
+Relative url:
+--------------
+
+  <a href="foobar.html">The Wonderful World of Foobar!</a>
+
+Relative URLs can take a number of different forms. When referring to a file that occurs in
+ the same directory as the referring page, a URL can be as simple as the name of the file. For example,
+ if you want to create a link in your home page to the file foobar.html, which is in the same directory 
+as your home page.
+
+
+
+Subdirectory:
+-----------------
+If the file you want to link to is in a subdirectory of the referring page's directory,
+ you need to enter only the directory information and the name of the file. So if foobar.html 
+were in the foobar subdirectory of your www directory, you could refer to it from your home page by using:
+
+  <a href="foobar/foobar.html">The Wonderful World of Foobar!</a>
+
+
+If the file you want to link to is in a higher directory than the referring page, 
+use .., which means to go up a directory. For example, to link from foobar.html to home.html,
+ which is in the directory above, you would use:
+
+  <a href="../home.html">Go back to my home page</a>
