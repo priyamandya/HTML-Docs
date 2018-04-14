@@ -1,0 +1,114 @@
+eXtensible Mark-up Language (XML):
+================================= 
+ 
+* XML is "Programing Language & Platform Independent Language" which helps to store and transport data 
+ 
+* Different Applications which are developed using different technologies can Transfer the Data among themselves with the help of XML 
+ 
+* As the name implies it's an extension of HTML & hence XML looks similar to HTML but it’s not a HTML 
+ 
+* XML has User-defind Tags. XML tags are also called as "elements" 
+ 
+* XML Elements are "Case Sensitive" 
+ 
+* XML is "Strictly Typed" Language hence, - For every element data, “data-type” should be defined, - every opening element should have corresponding closing element and  - also XML elements must be properly nested/closed.
+
+Ex:  <employee> <name>Priyanka</name> </employee> 
+ 
+Note:-  In the above example first you should closed </name> & then </employee> but in HTML it’s not mandatory. For example, <B><U><I>My Text</U></I></B> works perfectly fine 
+ 
+* Below line is called as "XML prolog", which is optional. If it exists, it must be the First Line of XML   <?xml version="1.0" encoding="UTF-8" ?>  The syntax of XML comment is similar to that of HTML <!-- This is a comment --> 
+ 
+* File extension of XML is ".xml"   
+ 
+* MIME type (Content Type) of XML is "application/xml" 
+ 
+ 
+ 
+1. XML Structure:
+================= 
+ 
+* Like HTML, XML follows a Tree Structure 
+ 
+* An XML tree starts at a "root element" and branches from "root element" will have "child elements" 
+ 
+* XML Consists of "Only One" root element which is parent of all other elements.
+"child elements" can have "sub elements / child elements" 
+ 
+* Structure :
+==============
+<root>   
+	<child>     
+		<subchild>.....</subchild>  
+	</child> 
+ </root>  
+ 
+ Example:
+ <? xml version="1.0" encoding ="UTF-8">    --------xml Prolog
+ <!-- bookstore-->     -----------------------------comment in xml
+ <bookstore>          ------------------------------root element
+	<book ISBN="1234">  ----------------------------child element
+		<title>Mastery</title>------------------------subElement
+		<author>RobertGreene</author>
+		<price>2000</price>
+	<book>
+	<book ISBN=5468>
+		<title>Mastery</title>
+		<author>RobertGreene</author>
+		<price>2000</price>
+	</book>
+</bookstore>
+
+
+2. Entity References:
+=====================
+ 
+* Some characters have a special meaning in XML. If you place a character like "<" inside an XML element, it will generate an error because it represents the start of a new element Ex: <message>salary<1000</message> 
+ 
+* To avoid this error, we can replace the "<" character with an "entity reference" as shown below <message>salary &lt; 1000</message> 
+ 
+* There are 5 pre-defined entity references in XML: 
+	&lt;  < less than
+	&gt;  > greater than 
+	&amp;  & ampersand 
+	&apos;  ' apostrophe 
+	&quot;  " quotation mark 
+ 
+ 
+3. PCDATA: Parsed Character Data :
+=================================
+ 
+* Text between start-element and end-element is called as PCDATA which will be examined by the parser 
+ 
+Example:- 
+<employee>Priyanka</employee> 
+The string "Priyanka" is considered as PCDATA 
+ 
+ 
+4. CDATA: Character Data :
+=========================
+ 
+* W.K.T special characters (such as "<", "&") must be referenced through pre-defined entities 
+ 
+* If XML data contain many special characters, it is cumbersome to replace all of them. Instead we can use "CDATA (character data) section"      A CDATA section starts with the following sequence: 
+ 
+<![CDATA[ 
+ 
+ and ends with the next occurrence of the sequence: 
+ 
+]]> 
+ 
+  All characters enclosed between these two sequences are interpreted as characters    The XML parsers ignores all the mark-up within the CDATA section.     Example: -  
+ 
+<employee>Priyanka</employee> the start and end "employee" elements are interpreted as mark-up. However, if written like this: 
+ 
+<![CDATA[    <employee>Priyanka</employee>     ]]> 
+ 
+then the parsers interprets the same as if it had been written like this: 
+ 
+&lt;employee&gt;Priyanka&lt;/employee&gt; 
+ 
+	
+ 
+ 
+ 
